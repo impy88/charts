@@ -22,6 +22,9 @@ spec:
   {{- if .Values.service.externalIPs }}
   externalIPs: {{ toYaml .Values.service.externalIPs | nindent 4 }}
   {{- end }}
+  {{- if .Values.service.externalTrafficPolicy }}
+  externalTrafficPolicy: {{ toYaml .Values.service.externalTrafficPolicy | nindent 4 }}
+  {{- end }}
   ports:
   - name: mongodb
     port: 27017
